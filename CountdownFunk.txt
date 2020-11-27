@@ -1,0 +1,44 @@
+sa xml
+android:layout
+
+<TextView
+android:id="@+id/"
+android:layout_width="match"
+android:text="00:30" //seconds pu
+>
+ 
+TextView t1;
+Button b1;
+CountDownTimer countDownTimer;
+
+@Override// basta ganun
+
+t1= findViewById(R.id.textView);
+b1=findViewById(R.id,button);
+ countDownTimer = new CountDownTimer(5000,1000)
+{
+@Override 
+
+public void onTick(long millisUntilFinished) {
+
+t1.setText(millisUntilFinished/1000+ "sec left");
+
+}
+@Override 
+public void onFinish() {
+t1.setText("Time's Up");
+Toast.makeText(MainActivity.this,"finish", Toas.LENGTH_SHORT).SHOW();
+
+}
+});
+
+b1.setOnClickListener(new View.OnClickListener()
+{
+@Override 
+public void onClick(View v) {
+countDownTimer.start();
+Toast.makeText(MainActivity.this,"Start", Toas.LENGTH_SHORT).SHOW();
+
+
+});
+}
